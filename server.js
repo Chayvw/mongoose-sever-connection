@@ -12,7 +12,7 @@ app.use(express.json());
 mongoose.connect(process.env.MONGODB_URI || "mongodb+srv://chay618:test18@test18.ewohp.mongodb.net/test18?retryWrites=true&w=majority", {
   useNewUrlParser: true,
   useFindAndModify: false,
-  { useUnifiedTopology: true }
+   useUnifiedTopology: true }
 });
 
 mongoose.connection.on("connected", ()=>{
