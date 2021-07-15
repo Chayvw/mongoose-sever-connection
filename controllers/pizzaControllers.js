@@ -1,9 +1,9 @@
 const express = require("express");
 const router = express.Router();
-const Pizza = require("./models/testModel");
+const Pizza = require("../models/testModel");
 
 
-app.get("/api/pizzas", (req, res)=>{
+router.get("/api/pizzas", (req, res)=>{
     Pizza.find({}).then((foundPizzas) =>{
         res.json({
            error:false,
@@ -14,7 +14,7 @@ app.get("/api/pizzas", (req, res)=>{
 });
 
 
-app.post("/api/pizzas", (req, res)=>{
+router.post("/api/pizzas", (req, res)=>{
     Pizza.create(req.body).then((createdPizza) =>{
         res.json({
             error:false,
@@ -30,3 +30,5 @@ app.post("/api/pizzas", (req, res)=>{
         })
     })
 });
+
+module.exports = router;

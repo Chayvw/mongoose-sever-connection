@@ -3,7 +3,7 @@ const mongoose = require("mongoose");
 
 const Pizza = require("./models/testModel");
 
-pizzaController = require("./controllers/pizzaControllers");
+const PizzaController = require("./controllers/pizzaControllers");
 
 
 const PORT = process.env.PORT || 27017;
@@ -29,7 +29,7 @@ app.get("/api/config", (req, res)=>{
         });
 });
 
-app.use(pizzaController)
+app.use(PizzaController);
 
 // app.get("/api/pizzas", (req, res)=>{
 //     Pizza.find({}).then((foundPizzas) =>{
